@@ -1,0 +1,1511 @@
+/*ヘッダー*/
+.header{
+    display:inline-block;
+}
+#header{
+    background-color:black;
+    height:120px;
+    width:100%;
+    border-bottom:solid white;
+}
+#headertitle{
+    color:white;
+    font-size:100px;
+    margin-left:170px;
+}
+#instabutton{
+    border-radius: 30px;
+    width:100px;
+    height:100px;
+    text-decoration:none;
+    background:#fff;
+    border:3px solid #1B1B1B;
+    position:absolute;
+    top:15px;
+    left:50px;
+    background-image:url("photo/instagram.jpg");
+    background-size:contain;
+}
+#nav-drawer{
+    position:absolute;
+    top:40px;
+    right:50px;
+    
+}
+  /*チェックボックス等は非表示に*/
+.nav-unshown {
+    display:none;
+}
+  /*アイコンのスペース*/
+#nav-open {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+     
+}
+  /*ハンバーガーアイコンをCSSだけで表現*/
+#nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 10px;/*線の太さ*/
+    width: 80px;/*長さ*/
+    border-radius: 3px;
+    background: #555;
+    display: block;
+    content: '';
+    cursor: pointer;
+}
+#nav-open span:before {
+    bottom: -25px;
+}
+#nav-open span:after {
+    bottom: -50px;
+}
+  
+  /*閉じる用の薄黒カバー*/
+#nav-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+  
+  /*中身*/
+#nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+    max-width: 1000px;/*最大幅（調整してください）*/
+    height: 100%;
+    background-color:#ffa500;
+    background-image:
+      repeating-linear-gradient(-45deg,#ff8c00, #ff8c00, 7.5px, transparent 0, transparent 15px);/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);/*左に隠しておく*/
+}
+  
+  /*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+}
+  
+#nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示（右へスライド）*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+
+#hamburgertitle{
+    font-size:100px;
+    font-weight: 700;
+    margin-top:80px;
+    margin-left:100px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#hamburgersubtitle{
+    font-size:70px;
+    margin-top:20px;
+    margin-left:180px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#hamburgerunderline1{
+    background-color:black;
+    width:90%;
+    height:10px;
+    margin-top:10px;
+    margin-left:30px;
+}
+#hamburgerunderline2{
+    background-color:black;
+    width:90%;
+    height:10px;
+    margin-top:2000px;
+    margin-left:30px;
+}
+#homeicon{
+    width:180px;
+    height:100px;
+    position:absolute;
+    top:390px;
+}
+#flowersicon{
+    width:180px;
+    height:100px;
+    position:absolute;
+    top:570px;
+}
+#locationicon{
+    width:180px;
+    height:100px;
+    position:absolute;
+    top:750px;
+}
+#photosicon{
+    width:180px;
+    height:100px;
+    position:absolute;
+    top:930px;
+}
+#aboutmeicon{
+    width:180px;
+    height:100px;
+    position:absolute;
+    top:1110px;
+}
+#hamburgerhome a{
+    color:black;
+    text-decoration:none;
+    display:inline-block;
+    font-size:80px;
+    font-family:monospace;
+    position:absolute;
+    top:410px;
+    left:200px;
+}
+#hamburgerhome a:hover{
+    text-decoration:underline;
+}
+#hamburgerflowers a{
+    color:black;
+    text-decoration:none;
+    display:inline-block;
+    font-size:80px;
+    font-family:monospace;
+    position:absolute;
+    top:590px;
+    left:200px;
+}
+#hamburgerflowers a:hover{
+    text-decoration:underline;
+}
+#hamburgerlocation a{
+    color:black;
+    text-decoration:none;
+    display:inline-block;
+    font-size:80px;
+    font-family:monospace;
+    position:absolute;
+    top:770px;
+    left:200px;
+}
+#hamburgerlocation a:hover{
+    text-decoration:underline;
+}
+#hamburgerphotos a{
+    color:black;
+    text-decoration:none;
+    display:inline-block;
+    font-size:80px;
+    font-family:monospace;
+    position:absolute;
+    top:950px;
+    left:200px;
+}
+#hamburgerphotos a:hover{
+    text-decoration:underline;
+}
+#hamburgeraboutme a{
+    color:black;
+    text-decoration:none;
+    display:inline-block;
+    font-size:80px;
+    font-family:monospace;
+    position:absolute;
+    top:1130px;
+    left:200px;
+}
+#hamburgeraboutme a:hover{
+    text-decoration:underline;
+}
+
+.cover{
+    display:none;
+}
+.cover.appear{
+    display:block;
+    z-index: 10000;
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.3;
+    transition: .3s ease-in-out;
+}
+
+.homemodal{
+    display:none;
+}
+.homemodal.appear{
+    display:block;
+    background-color:black;
+    width:3000px;
+    height:1700px;
+    z-index:10002;
+    position:fixed;
+    top:160px;
+    left:1100px;
+    opacity:1;
+}
+
+#closebuttonhome a{
+    display:inline-block;
+    background-color:#dc143c;
+    border-radius:50%;
+    position:fixed;
+    top:160px;
+    left:3955px;
+    width:50px;
+    height:50px;
+    font-size:37px;
+    font-weight: 900;
+    color:black;
+    text-decoration:none; 
+    text-align:center;
+}
+#homemodalshadow{
+    display:inline-block;
+    width:2800px;
+    height:3px;
+    background-color:white;
+    opacity:1;
+    position:fixed;
+    top:206px;
+    left:1200px;
+}
+#homemodaltitle{
+    display:inline-block;
+    position:fixed;
+    top:80px;
+    left:1200px;
+    color:white;
+    font-size:70px;
+    font-weight: 700;
+    font-family:'Courier New', Courier, monospace;
+}
+#homemodalcanvas1{
+    display:inline-block;
+    width:900px;
+    height:900px;
+    border-radius:50%;
+    border:solid 5px #ffd700;
+    margin-top:70px;
+    margin-left:2090px;
+}
+#homemodalsubtitle{
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:120px;
+    position:fixed;
+    top:500px;
+    left:2250px;
+    width:2000px;
+}
+#homemodalmain{
+    font-size:50px;
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    position:fixed;
+    top:1000px;
+    left:2300px;
+}
+#homemodalphoto1{
+    display:inline-block;
+    width:900px;
+    height:1500px;
+    position:fixed;
+    top:350px;
+    left:1200px;
+}
+.flowersmodal{
+    display:none;
+}
+.flowersmodal.appear{
+    display:block;
+    background-color:black;
+    width:3000px;
+    height:1700px;
+    z-index:10002;
+    position:fixed;
+    top:160px;
+    left:1100px;
+    opacity:1;
+}
+
+#closebuttonflowers a{
+    display:inline-block;
+    background-color:#dc143c;
+    border-radius:50%;
+    position:fixed;
+    top:160px;
+    left:3955px;
+    width:50px;
+    height:50px;
+    font-size:37px;
+    font-weight: 900;
+    color:black;
+    text-decoration:none; 
+    text-align:center; 
+}
+#flowersmodalshadow{
+    display:inline-block;
+    width:2800px;
+    height:3px;
+    background-color:white;
+    opacity:1;
+    position:fixed;
+    top:206px;
+    left:1200px;
+}
+#flowersmodaltitle{
+    display:inline-block;
+    position:fixed;
+    top:80px;
+    left:1200px;
+    color:white;
+    font-size:70px;
+    font-weight: 700;
+    font-family:'Courier New', Courier, monospace;
+}
+#flowersmodalcanvas1{
+    display:inline-block;
+    width:900px;
+    height:900px;
+    border-radius:50%;
+    border:solid 5px #7cf700;
+    margin-top:470px;
+    margin-left:1160px;
+}
+#flowersmodalsubtitle{
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:120px;
+    position:fixed;
+    top:500px;
+    left:2250px;
+    width:2000px;
+}
+#flowersmodalmain{
+    font-size:50px;
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    position:fixed;
+    top:1370px;
+    left:2200px;
+}
+#flowersmodalphoto1{
+    display:inline-block;
+    width:900px;
+    height:1200px;
+    position:fixed;
+    top:350px;
+    left:1200px;
+}
+#flowersmodalphoto2{
+    display:inline-block;
+    width:900px;
+    height:1000px;
+    position:fixed;
+    top:350px;
+    left:3000px;
+}
+.locationmodal{
+    display:none;
+}
+.locationmodal.appear{
+    display:block;
+    background-color:black;
+    width:3000px;
+    height:1700px;
+    z-index:10002;
+    position:fixed;
+    top:160px;
+    left:1100px;
+    opacity:1;
+}
+
+#closebuttonlocation a{
+    display:inline-block;
+    background-color:#dc143c;
+    border-radius:50%;
+    position:fixed;
+    top:160px;
+    left:3955px;
+    width:50px;
+    height:50px;
+    font-size:37px;
+    font-weight: 900;
+    color:black;
+    text-decoration:none; 
+    text-align:center; 
+}
+#locationmodalshadow{
+    display:inline-block;
+    width:2800px;
+    height:3px;
+    background-color:white;
+    opacity:1;
+    position:fixed;
+    top:206px;
+    left:1200px;
+}
+#locationmodaltitle{
+    display:inline-block;
+    position:fixed;
+    top:80px;
+    left:1200px;
+    color:white;
+    font-size:70px;
+    font-weight: 700;
+    font-family:'Courier New', Courier, monospace;
+}
+#locationmodalcanvas1{
+    display:inline-block;
+    width:900px;
+    height:900px;
+    border-radius:50%;
+    border:solid 5px #7fffd4;
+    margin-top:500px;
+    margin-left:300px;
+}
+#locationmodalsubtitle{
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:120px;
+    position:fixed;
+    top:500px;
+    left:1250px;
+    width:2000px;
+}
+#locationmodalmain{
+    font-size:50px;
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    position:fixed;
+    top:1000px;
+    left:1200px;
+}
+#locationmodalphoto1{
+    display:inline-block;
+    width:900px;
+    height:1000px;
+    position:fixed;
+    top:350px;
+    left:3100px;
+}
+.photosmodal{
+    display:none;
+}
+.photosmodal.appear{
+    display:block;
+    background-color:black;
+    width:3000px;
+    height:1700px;
+    z-index:10002;
+    position:fixed;
+    top:160px;
+    left:1100px;
+    opacity:1;
+}
+
+#closebuttonphotos a{
+    display:inline-block;
+    background-color:#dc143c;
+    border-radius:50%;
+    position:fixed;
+    top:160px;
+    left:3955px;
+    width:50px;
+    height:50px;
+    font-size:37px;
+    font-weight: 900;
+    color:black;
+    text-decoration:none; 
+    text-align:center; 
+}
+#photosmodalshadow{
+    display:inline-block;
+    width:2800px;
+    height:3px;
+    background-color:white;
+    opacity:1;
+    position:fixed;
+    top:206px;
+    left:1200px;
+}
+#photosmodaltitle{
+    display:inline-block;
+    position:fixed;
+    top:80px;
+    left:1200px;
+    color:white;
+    font-size:70px;
+    font-weight: 700;
+    font-family:'Courier New', Courier, monospace;
+}
+#photosmodalcanvas1{
+    display:inline-block;
+    width:900px;
+    height:900px;
+    border-radius:50%;
+    border:solid 5px #ff1493;
+    margin-top:70px;
+    margin-left:1290px;
+}
+#photosmodalsubtitle{
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:120px;
+    position:fixed;
+    top:330px;
+    left:1850px;
+    width:2000px;
+}
+#photosmodalmain{
+    font-size:50px;
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    position:fixed;
+    top:700px;
+    left:2300px;
+}
+#photosmodalphoto1{
+    display:inline-block;
+    width:900px;
+    height:1000px;
+    position:fixed;
+    top:750px;
+    left:1200px;
+}
+.aboutmemodal{
+    display:none;
+}
+.aboutmemodal.appear{
+    display:block;
+    background-color:black;
+    width:3000px;
+    height:1700px;
+    z-index:10002;
+    position:fixed;
+    top:160px;
+    left:1100px;
+    opacity:1;
+}
+
+#closebuttonaboutme a{
+    display:inline-block;
+    background-color:#dc143c;
+    border-radius:50%;
+    position:fixed;
+    top:160px;
+    left:3955px;
+    width:50px;
+    height:50px;
+    font-size:37px;
+    font-weight: 900;
+    color:black;
+    text-decoration:none; 
+    text-align:center; 
+}
+#aboutmemodalshadow{
+    display:inline-block;
+    width:2800px;
+    height:3px;
+    background-color:white;
+    opacity:1;
+    position:fixed;
+    top:206px;
+    left:1200px;
+}
+#aboutmemodaltitle{
+    display:inline-block;
+    position:fixed;
+    top:80px;
+    left:1200px;
+    color:white;
+    font-size:70px;
+    font-weight: 700;
+    font-family:'Courier New', Courier, monospace;
+}
+#aboutmemodalcanvas1{
+    display:inline-block;
+    width:900px;
+    height:900px;
+    border-radius:50%;
+    border:solid 5px #dc143c;
+    margin-top:600px;
+    margin-left:290px;
+}
+#aboutmemodalsubtitle{
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:120px;
+    position:fixed;
+    top:700px;
+    left:1250px;
+    width:2000px;
+}
+#aboutmemodalmain{
+    font-size:50px;
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    position:fixed;
+    top:1350px;
+    left:1200px;
+}
+#aboutmemodalphoto1{
+    display:inline-block;
+    width:900px;
+    height:1100px;
+    position:fixed;
+    top:250px;
+    left:2900px;
+}
+
+
+
+
+/*メイン*/
+
+#slidertitle{
+    z-index:2;
+    font-size:450px;
+    color:white;
+    text-shadow:20px 1px 0 silver, -1px -1px 0 grey,
+    -1px 1px 0 white, 1px -1px 0 white,
+    0px 1px 0 white,  0-1px 0 white,
+    -1px 0 0 white, 1px 0 0 white;
+    position:absolute;
+    top:100px;
+    left:850px;
+}
+#slidersubtitle{
+    z-index:2;
+    font-size:160px;
+    color:white;
+    text-shadow:10px 1px 0 silver, -1px -1px 0 grey,
+    -1px 1px 0 white, 1px -1px 0 white,
+    0px 1px 0 white,  0-1px 0 white,
+    -1px 0 0 white, 1px 0 0 white;
+    position:absolute;
+    top:950px;
+    left:1000px;
+}
+#slidercanvas1{
+    background-color:black;
+    width:100%;
+    height:12000px;
+    position:absolute;
+    top:115px;
+}
+#slidercanvas2{
+    background-color:white;
+    width:100%;
+    height:5px;
+    position:absolute;
+    top:1980px; 
+}
+#slidercanvas3{
+    font-size:80px;
+    font-family:'Courier New', Courier, monospace;
+    position:absolute;
+    top:2050px;
+    left:2300px;
+    color:white;
+    display:none;
+}
+#slidercanvas4{
+    width:100%;
+    height:13000px;
+    background-color:#ffa500;
+    background-image:
+      repeating-linear-gradient(-45deg,#ff8c00, #ff8c00, 7.5px, transparent 0, transparent 15px);
+    position:absolute;
+    top:12000px;
+}
+.button1{
+    display:block;
+    width:600px;
+    height:150px;
+    font-size:80px;
+    padding:0.8em;
+    text-align:center;
+    padding-top:20px;
+    text-decoration:underline;
+    border-style:none;
+    color:white;
+    background:black;
+}
+.button1:hover{
+    background:#1B1B1B;
+    color:#fff;
+    cursor:pointer;
+    text-decoration:none;
+}
+.slider img{
+    margin:80px auto;
+    height: 100%;
+    width: 100%;
+}
+.slider{
+    display:none;
+    z-index:1;
+}
+.slider.slick-initialized{
+    display:block;
+}
+.fadein {
+    opacity: 0;
+    transform: translate(0, 50px);
+    transition: all 1500ms;
+}
+.fadein.scrollin {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+#tag1{
+    display:inline-block;
+    font-size:120px;
+    font-family:'Courier New', Courier, monospace;
+    color:white;
+    width:4000px;
+    position:absolute;
+    top:2850px;
+    left:500px;
+    z-index:2;
+}
+#tagcanvas1{
+    display:inline-block;
+    width:1000px;
+    height:1000px;
+    border-radius:50%;
+    border:solid 5px #ff00ff;
+    position:absolute;
+    top:2600px;
+    left:100px;
+    z-index:1;
+}
+#tagcanvas2{
+    display:inline-block;
+    width:3800px;
+    height:10px;
+    background-color:white;
+    position:absolute;
+    top:3080px;
+    left:800px;
+    z-index:2;
+}
+#tag2{
+    display:inline-block;
+    font-size:120px;
+    font-family:'Courier New', Courier, monospace;
+    color:white;
+    width:4000px;
+    position:absolute;
+    top:6750px;
+    left:1000px;
+    z-index:2;
+}
+#tagcanvas3{
+    display:inline-block;
+    width:1000px;
+    height:1000px;
+    border-radius:50%;
+    border:solid 5px #00ff00;
+    position:absolute;
+    top:6400px;
+    left:3700px;
+    z-index:1;
+}
+#tagcanvas4{
+    display:inline-block;
+    width:2800px;
+    height:10px;
+    background-color:white;
+    position:absolute;
+    top:6980px;
+    left:300px;
+    z-index:2;
+}
+#tag3{
+    display:inline-block;
+    font-size:160px;
+    font-family:'Courier New', Courier, monospace;
+    color:white;
+    width:3000px;
+    position:absolute;
+    top:10550px;
+    left:1150px;
+    z-index:2;
+}
+#tagcanvas5{
+    display:inline-block;
+    width:1000px;
+    height:1000px;
+    border-radius:50%;
+    border:solid 8px #ff0000;
+    position:absolute;
+    top:10300px;
+    left:1880px;
+    z-index:1;
+}
+#tagcanvas6{
+    display:inline-block;
+    width:2800px;
+    height:10px;
+    background-color:white;
+    position:absolute;
+    top:10850px;
+    left:1000px;
+    z-index:2;
+}
+#websites{
+    position:absolute;
+    top:12080px;
+    left:2125px;
+    color:black;
+    font-size:130px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#websitesunderline{
+    background-color:black;
+    width:15%;
+    height:5px;
+    position:absolute;
+    top:12350px;
+    left:2045px;
+}
+
+/*snapmart*/
+#snapmartcanvas1{
+    width:3500px;
+    height:2300px;
+    background-color:black;
+    position:absolute;
+    top:12500px;
+}
+#snapmarticon1{
+    width:2500px;
+    height:4500px;
+    position:absolute;
+    top:-1050px;
+    left:-200px;
+    opacity:0.3;
+}
+#snapmarticon2{
+    position:absolute;
+    top:550px;
+    left:1200px;
+}
+#snapmartbutton{
+    position:absolute;
+    top:14300px;
+    left:2400px;
+}
+#snapmart1{
+    width:700px;
+    height:1200px;
+    position:absolute;
+    top:950px;
+    left:3350px;
+}
+#snapmart2{
+    width:700px;
+    height:1200px;
+    position:absolute;
+    top:950px;
+    left:4150px;
+}
+#snapmarttag{
+    font-size:140px;
+    position:absolute;
+    top:12730px;
+    left:2200px;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#snapmartexp{
+    font-size:60px;
+    position:absolute;
+    top:13050px;
+    left:2220px;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/*EyeEm*/
+#EyeEmcanvas1{
+    width:3500px;
+    height:2300px;
+    background-color:black;
+    position:absolute;
+    top:15400px;
+    right:0px;
+}
+#EyeEmicon1{
+    width:2500px;
+    height:4600px;
+    position:absolute;
+    top:14300px;
+    right:-400px;
+    opacity:0.3;
+}
+#EyeEmicon2{
+    position:absolute;
+    top:16100px;
+    right:1200px;
+}
+#EyeEm1{
+    width:700px;
+    height:1200px;
+    position:absolute;
+    top:16400px;
+    left:200px;    
+}
+#EyeEm2{
+    width:700px;
+    height:1200px;
+    position:absolute;
+    top:16400px;
+    left:1000px;    
+}
+#EyeEmbutton{
+    position:absolute;
+    top:17300px;
+    right:2400px;
+}
+#EyeEmtag{
+    font-size:140px;
+    position:absolute;
+    top:15700px;
+    right:2720px;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#EyeEmexp{
+    font-size:60px;
+    position:absolute;
+    top:16100px;
+    right:2200px;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/*mobileprint*/
+#mobileprintcanvas1{
+    width:3500px;
+    height:2300px;
+    background-color:black;
+    position:absolute;
+    top:18300px;
+}
+#mobileprinticon1{
+    width:2800px;
+    height:4800px;
+    position:absolute;
+    top:17500px;
+    left:-200px;
+    opacity:0.5;
+}
+#mobileprinticon2{
+    position:absolute;
+    top:19100px;
+    left:1550px;
+}
+#mobileprint1{
+    width:700px;
+    height:1200px;
+    position:absolute;
+    top:19300px;
+    left:3300px;
+}
+#mobileprint2{
+    width:700px;
+    height:1200px;
+    position:absolute;
+    top:19300px;
+    left:4100px;
+}
+#mobileprintbutton{
+    position:absolute;
+    top:20100px;
+    left:2600px;
+}
+#mobileprinttag{
+    font-size:140px;
+    position:absolute;
+    top:18550px;
+    left:2400px;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#mobileprintexp{
+    font-size:60px;
+    position:absolute;
+    top:18900px;
+    left:2420px;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/*twenty20*/
+#twenty20canvas1{
+    width:3500px;
+    height:2300px;
+    background-color:black;
+    position:absolute;
+    top:21200px;
+    right:0px;
+}
+#twenty20icon1{
+    width:2400px;
+    height:4500px;
+    position:absolute;
+    top:20200px;
+    right:-150px;
+    opacity:0.3;
+}
+#twenty20icon2{
+    position:absolute;
+    top:21800px;
+    right:1280px;
+}
+#twenty201{
+    width:700px;
+    height:1200px;
+    position:absolute;
+    top:22200px;
+    left:400px;
+}
+#twenty20button{
+    position:absolute;
+    top:23050px;
+    right:2600px;
+}
+#twenty20tag{
+    font-size:140px;
+    position:absolute;
+    top:21400px;
+    right:2650px;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#twenty20exp{
+    font-size:60px;
+    position:absolute;
+    top:21750px;
+    right:2200px;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#photo1{
+    width:10%;
+    height:23%;
+    position:absolute;
+    top:4300px;
+    left:800px;
+}
+#photo2{
+    width:10%;
+    height:23%;
+    position:absolute;
+    top:4300px;
+    left:1500px;
+}
+#photo3{
+    width:10%;
+    height:23%;
+    position:absolute;
+    top:4300px;
+    left:2200px;
+}
+#photo4{
+    width:10%;
+    height:23%;
+    position:absolute;
+    top:4300px;
+    left:2900px;
+}
+#photo5{
+    width:10%;
+    height:23%;
+    position:absolute;
+    top:4300px;
+    left:3600px;
+}
+#photo6{
+    width:10%;
+    height:23%;
+    position:absolute;
+    top:8100px;
+    left:800px;
+}
+#photo7{
+    width:10%;
+    height:23%;
+    position:absolute;
+    top:8100px;
+    left:1500px;
+}
+#photo8{
+    width:10%;
+    height:23%;
+    position:absolute;
+    top:8100px;
+    left:2200px;
+}
+#photo9{
+    width:10%;
+    height:23%;
+    position:absolute;
+    top:8100px;
+    left:2900px;
+}
+#photo10{
+    width:10%;
+    height:23%;
+    position:absolute;
+    top:8100px;
+    left:3600px;
+}
+#photoexp1{
+    color:white;
+    font-size:45px;
+    position:absolute;
+    top:4950px;
+    left:860px;
+}
+#photoexp2{
+    color:white;
+    font-size:45px;
+    position:absolute;
+    top:4950px;
+    left:1650px;
+}
+#photoexp3{
+    color:white;
+    font-size:45px;
+    position:absolute;
+    top:4950px;
+    left:2250px;
+}
+#photoexp4{
+    color:white;
+    font-size:45px;
+    position:absolute;
+    top:4950px;
+    left:2960px;
+}
+#photoexp5{
+    color:white;
+    font-size:45px;
+    position:absolute;
+    top:4950px;
+    left:3750px;
+}
+#photoexp6{
+    color:white;
+    font-size:45px;
+    position:absolute;
+    top:8750px;
+    left:885px;
+}
+#photoexp7{
+    color:white;
+    font-size:45px;
+    position:absolute;
+    top:8750px;
+    left:1650px;  
+}
+#photoexp8{
+    color:white;
+    font-size:45px;
+    position:absolute;
+    top:8750px;
+    left:2330px;
+}
+#photoexp9{
+    color:white;
+    font-size:45px;
+    position:absolute;
+    top:8750px;
+    left:2950px;
+}
+#photoexp10{
+    color:white;
+    font-size:45px;
+    position:absolute;
+    top:8750px;
+    left:3720px;
+}
+#backphoto1{
+    widows:80%;
+    height:80%;
+    opacity:0.5;
+    position:absolute;
+    top:2600px;
+    left:3500px;
+}
+#backphoto2{
+    widows:110%;
+    height:110%;
+    opacity:0.5;
+    position:absolute;
+    top:6100px;
+    left:10px;
+}
+
+
+
+
+
+
+/*フッター*/
+#footer{
+    background-color:black;
+    height:850px;
+    width:100%;
+    position:absolute;
+    top:24500px;
+}
+#footercanvas1{
+    background-color:white;
+    width:15%;
+    height:5px;
+    position:absolute;
+    top:24700px;
+    left:200px;
+}
+#footercanvas2{
+    background-color:white;
+    width:15%;
+    height:5px;
+    position:absolute;
+    top:24700px;
+    left:1400px;
+}
+#footermenu{
+    color:white;
+    font-size:70px;
+    position:absolute;
+    top:24560px;
+    left:200px;
+    font-family:'Courier New', Courier, monospace;
+}
+#footerwebsites{
+    color:white;
+    font-size:70px;
+    position:absolute;
+    top:24560px;
+    left:1400px;
+    font-family:'Courier New', Courier, monospace;
+}
+#footertitle{
+    background-color:black;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    height:50px;
+    width:100%;
+    text-align:center;
+    font-size:40px;
+    position:absolute;
+    top:25250px;
+}
+#footerbeautifulflowers{
+    display:inline-block;
+    color:white;
+    font-size:100px;
+    font-family:Arial, Helvetica, sans-serif;
+    position:absolute;
+    top:24650px;
+    left:3750px;
+}
+#footerinstagram{
+    display:inline-block;
+    color:white;
+    font-size:50px;
+    font-family:Arial, Helvetica, sans-serif;
+    position:absolute;
+    top:24890px;
+    left:3800px;
+}
+#footertwitter{
+    display:inline-block;
+    color:white;
+    font-size:50px;
+    font-family:Arial, Helvetica, sans-serif;
+    position:absolute;
+    top:24970px;
+    left:3800px;
+}
+#footerhome a{
+    text-decoration:none;
+    display:inline-block;
+    color:white;
+    font-size:60px;
+    font-family:'Courier New', Courier, monospace;
+    position:absolute;
+    top:24760px;
+    left:200px;
+}
+#footerhome a:hover{
+    text-decoration:underline white;
+}
+#footerflowers a{
+    text-decoration:none;
+    display:inline-block;
+    color:white;
+    font-size:60px;
+    font-family:'Courier New', Courier, monospace;
+    position:absolute;
+    top:24840px;
+    left:200px;
+}
+#footerflowers a:hover{
+    text-decoration:underline white;
+}
+#footerlocation a{
+    text-decoration:none;
+    display:inline-block;
+    color:white;
+    font-size:60px;
+    font-family:'Courier New', Courier, monospace;
+    position:absolute;
+    top:24920px;
+    left:200px;
+}
+#footerlocation a:hover{
+    text-decoration:underline white;
+}
+#footerphotos a{
+    text-decoration:none;
+    display:inline-block;
+    color:white;
+    font-size:60px;
+    font-family:'Courier New', Courier, monospace;
+    position:absolute;
+    top:25000px;
+    left:200px;
+}
+#footerphotos a:hover{
+    text-decoration:underline white;
+}
+#footeraboutme a{
+    text-decoration:none;
+    display:inline-block;
+    color:white; 
+    font-size:60px;
+    font-family:'Courier New', Courier, monospace;
+    position:absolute;
+    top:25080px;
+    left:200px;
+}
+#footeraboutme a:hover{
+    text-decoration:underline white;
+}
+#footersnapmart a{
+    text-decoration:none;
+    display:inline-block;
+    color:white;
+    font-family:'Courier New', Courier, monospace;
+    font-size:60px;
+    position:absolute;
+    top:24760px;
+    left:1400px;
+}
+#footersnapmart a:hover{
+    text-decoration:underline white;
+}
+#footerEyeEm a{
+    text-decoration:none;
+    display:inline-block;
+    color:white;
+    font-size:60px;
+    font-family:'Courier New', Courier, monospace;
+    position:absolute;
+    top:24840px;
+    left:1400px;
+}
+#footerEyeEm a:hover{
+    text-decoration:underline white;
+}
+#footermobileprint a{
+    text-decoration:none;
+    display:inline-block;
+    color:white;
+    font-size:60px;
+    font-family:'Courier New', Courier, monospace;
+    position:absolute;
+    top:24920px;
+    left:1400px;
+}
+#footermobileprint a:hover{
+    text-decoration:underline white;
+}
+#footertwenty20 a{
+    text-decoration:none;
+    display:inline-block;
+    color:white;
+    font-size:60px;
+    font-family:'Courier New', Courier, monospace;
+    position:absolute;
+    top:25000px;
+    left:1400px;
+}
+#footertwenty20 a:hover{
+    text-decoration:underline white;
+}
+#footerinstabutton{
+    border-radius: 30px;
+    width:100px;
+    height:100px;
+    text-decoration:none;
+    background:#fff;
+    border:3px solid #1B1B1B;
+    position:absolute;
+    top:25120px;
+    left:2395px;
+    background-image:url("photo/instagram.jpg");
+    background-size:contain;
+}
+#footertwitterbutton{
+    border-radius: 30px;
+    width:100px;
+    height:100px;
+    text-decoration:none;
+    background:#fff;
+    border:3px solid #1B1B1B;
+    position:absolute;
+    top:25120px;
+    left:2505px;
+    background-image:url("photo/twitter.jpg");
+    background-size:contain;
+}
+#footertoppage{
+    font-size:60px;
+    position:absolute;
+    top:24370px;
+    left:2170px;
+}
+#footertoppage a{
+    color:black;
+    text-decoration:none;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+#footertoppage a:hover{
+    text-decoration:underline;
+}
+
